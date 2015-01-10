@@ -1,0 +1,64 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SearchProductGridaspx.aspx.cs"
+    Inherits="SearchProductGridaspx" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="JS/test/ddsmoothmenu.js" type="text/javascript"></script>
+    <script src="JS/test/jquery-scrolltofixed-min.js" type="text/javascript"></script>
+    <script src="JS/test/jquery-scrolltofixed.js" type="text/javascript"></script>
+    <script src="JS/test/jquery.min.js" type="text/javascript"></script>
+    <script src="JS/test/quicksearch.js" type="text/javascript"></script>
+     <script type="text/javascript">
+         $(function () {
+             $('.search_textbox').each(function (i) {
+                 $(this).quicksearch("[id*=gvProduct] tr:not(:has(th))", {
+                     'testQuery': function (query, txt, row) {
+                         return $(row).children(":eq(" + i + ")").text().toLowerCase().indexOf(query[0].toLowerCase()) != -1;
+                     }
+                 });
+             });
+         });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+   
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:GridView ID="gvProduct" runat="server" CellPadding="4" ForeColor="#333333" ShowFooter="false"
+        Width="100%" DataKeyNames="Product_ID" GridLines="None" AutoGenerateColumns="False"
+        OnDataBound="OnDataBound">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+            <asp:BoundField DataField="Product_ID" HeaderText="P#" />
+            <asp:BoundField DataField="Category_Name" HeaderText="Category Name" />
+            <asp:BoundField DataField="Brand_Name" HeaderText="Brand Name" />
+            <asp:BoundField DataField="Bar_Code" HeaderText="Bar Code" />
+            <asp:BoundField DataField="Size_Name" HeaderText="Size Name" />
+            <asp:BoundField DataField="Product_Name" HeaderText="Product Name" />
+            <asp:BoundField DataField="Standerd_Rebet" HeaderText="Standerd Rebet" />
+            <asp:BoundField DataField="Avalable_Quantity" HeaderText="Avalable Quantity" />
+            <asp:BoundField DataField="MRP" HeaderText="MRP" />
+            <asp:BoundField DataField="Sort_Code" HeaderText="Sort Code" />
+            <asp:TemplateField ItemStyle-Width="90px">
+                <ItemTemplate>
+                    <asp:ImageButton ID="imgbtnEdit" runat="server" ImageUrl="~/images/Edit.jpg" ToolTip="Edit"
+                        CausesValidation="false" Height="20px" Width="20px" />
+                    <asp:ImageButton ID="imgbtnDelete" Text="Edit" runat="server" ImageUrl="~/images/delete.jpg"
+                        ToolTip="Delete" Height="20px" Width="20px" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" HorizontalAlign="Left" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+    </asp:GridView>
+    </form>
+</body>
+</html>

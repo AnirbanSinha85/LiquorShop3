@@ -1,0 +1,113 @@
+﻿
+
+#header_content_area
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 90px;
+    padding: 14px 0 0 0;
+}
+
+.tbl_style
+{
+    border: 1px solid #3D73B1;
+    background-color: #F2F2F2;
+}
+
+.tbl_Header
+{
+    font-weight: bold;
+    color: #294E79;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+}
+
+
+.tbl_Sub_Header
+{
+    font-weight: bold;
+    color: #294E79;
+    font-weight: bold;
+    font-family: verdana;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.error_msg
+{
+    color: Red;
+}
+
+
+
+.modalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    z-index: 10000;
+}
+.popUpheader
+{
+    background-color: #3D73B1;
+}
+
+
+.txt_Style
+{
+    text-align: right;
+}
+
+/*------------------------------------------------For HTML Report CSS ------------------------------------------------ */
+.gridtable
+{
+    /* font-family: verdana,arial,sans-serif; cellspacing='3' cellpadding='4'     font-size: 11px;     color: #333333;     border-width: 1px;     border-color: #666666;     border-collapse:collapse;     border: dotted;*/
+    border-style: dotted;
+    border-width: 1px;
+    border-color: inherit;
+    font-family: SimSun-ExtB;
+    font-size: small;
+    width: 100%;
+}
+.gridtable tr
+{
+}
+.gridtable th
+{
+    border-style: dotted;
+    border-width: 1px;
+    border-color: inherit;
+}
+.gridtable td
+{
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-right-style: dotted;
+    border-right-width: 1px;
+}
+
+/*------------------------------------------------------END-------------------------------------------------*/
+
+body, html
+{
+    margin: 0;
+    padding: 0;
+    color: #000;
+    
+    /*height: 5000px;*/
+}
+#test
+{
+    background: #D9D9FF
+}
+#wrapper
+{
+    border: 5px solid #3D73B1;
+     
+    padding-top: 1px;
+}
+ 

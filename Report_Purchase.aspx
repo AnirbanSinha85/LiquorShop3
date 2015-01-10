@@ -1,0 +1,84 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
+    CodeFile="Report_Purchase.aspx.cs" Inherits="Report_Purchase" %>
+    
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+  <%--  <style type="text/css">
+        table.gridtable
+        {
+            font-family: verdana,arial,sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            border: dotted;
+        }
+        table.gridtable th
+        {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+            border: dotted;
+        }
+        table.gridtable td
+        {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+            border: dotted;
+        }
+    </style>--%>
+    <!-- Table goes in the document BODY -->
+
+     
+    <table class="gridtable" cellpadding="4" cellspacing="0">
+        <tr>
+            <th>
+                Info Header 1
+            </th>
+            <th>
+                Info Header 2
+            </th>
+            <th>
+                Info Header 3
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Text 1A
+            </td>
+            <td>
+                Text 1B
+            </td>
+            <td>
+                Text 1C
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Text 2A
+            </td>
+            <td>
+                Text 2B
+            </td>
+            <td>
+                Text 2C
+            </td>
+        </tr>
+        <tr>
+            <td>Text 3a
+            </td>
+             <td>Text 3b
+            </td>
+             <td>Text 3c
+            </td>
+            
+        </tr>
+    </table>
+</asp:Content>

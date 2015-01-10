@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Liquor-Shop</title>
+    <link href="CSS/ddsmoothmenu.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/ddsmoothmenu-v.css" rel="stylesheet" type="text/css" />
+    <script src="JS/jquery.min.js" type="text/javascript"></script>
+    <script src="JS/ddsmoothmenu.js" type="text/javascript"></script>
+    <link href="CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="JS/jquery-scrolltofixed.js"></script>
+    <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="js/ScrollableGridPlugin.js" type="text/javascript"></script>
+     
+
+    <script type="text/javascript">
+        $('#test').scrollToFixed({
+            limit: 1234
+        });
+    </script>
+    <script type="text/javascript">
+
+        ddsmoothmenu.init({
+            mainmenuid: "smoothmenu1", //menu DIV id
+            orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu', //class added to menu's outer DIV
+            //customtheme: ["#1c5a80", "#18374a"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+
+        ddsmoothmenu.init({
+            mainmenuid: "smoothmenu2", //Menu DIV id
+            orientation: 'v', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu-v', //class added to menu's outer DIV
+            method: 'toggle', // set to 'hover' (default) or 'toggle'
+            arrowswap: true, // enable rollover effect on menu arrow images?
+            //customtheme: ["#804000", "#482400"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center" style="background-color: #294E79; padding: 0 0 0 0; color: #FFFFFF">
+        <table width="100%">
+            <tr>
+                <td style="width: 80%" align="center">
+                    New Road By-Pass Road Crossing FL OFF-SHOP
+                </td>
+                <td style="width: 20%" align="right">
+                    Welcome : <b>
+                        <%=Session["First_Name"]%></b>
+                    <br />
+                    Logged as Administrator
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="smoothmenu1" class="ddsmoothmenu">
+        <ul>
+            <li><a href="Home.aspx">Company Profile</a></li>
+            <%
+                if (Convert.ToInt32(Session["AcessLevel"]) == 1)
+                {
+            %>
+            <li><a href="">User Registration</a>
+                <ul>
+                    <li><a href="UserRegistration.aspx">Add New User</a> </li>
+                </ul>
+            </li>
+            <li><a href="">Product Management</a>
+                <ul>
+                    <li><a href="#">Categories</a>
+                        <ul>
+                            <li><a href="Add_New_Product_Category.aspx">Add New Category </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Brand</a>
+                        <ul>
+                            <li><a href="Add_New_Brand.aspx">Add New Brand </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#x">Product</a>
+                        <ul>
+                            <li><a href="Add_New_Product.aspx">Add New Product </a></li>
+                             <li><a href="SearchProduct.aspx">Search Product </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Size</a>
+                        <ul>
+                            <li><a href="Add_New_Size.aspx">Add New Size </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">Purchase</a>
+                <ul>
+                    <li><a href="Add_New_Supplier.aspx">Suppliers</a>
+                        <ul>
+                            <li><a href="Add_New_Supplier.aspx">Create New Supplier </a></li>
+                            <%-- <li><a href="Gas_Company.aspx">Manage Size </a></li>--%>
+                        </ul>
+                    </li>
+                    <li><a href="#">Invoice </a>
+                        <ul>
+                            <li><a href="Create_New_Purchase_Invoice.aspx">Create New Invoice </a></li>
+                            <%-- <li><a href="View_Purchase_Invoice.aspx">Manage Invoice </a></li>--%>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href=" ">Claim</a>
+                <ul style="width: 200px">
+                    <li><a href="Add_New_Claim.aspx">Add New Claim</a> </li>
+                </ul>
+            </li>
+            <%} %>
+            <li><a href="Create_New_Sales_Invoice.aspx">Sales</a> </li>
+            <li><a href="#">Report</a>
+                <ul style="width: 200px">
+                    <li><a href="Report_Claim.aspx">Claim Report</a> </li>
+                    <li><a href="#">Stock Report</a>
+                        <ul style="width: 200px">
+                            <li><a href="Report_Category_Wise_Detail_Stock.aspx">Brand Wise Detail Stock</a> </li>
+                            <li><a href="Report_Product_Wise_Detail_Stock.aspx">Product Wise Detail Stock</a>
+                            </li>
+                            <li><a href="Report_Stock_Valuation.aspx">Stock Valuation</a> </li>
+                        </ul>
+            </li>
+            <li><a href="#">Sale Report</a>
+                <ul style="width: 200px">
+                    <li><a href="View_Sales_Invoice.aspx">Sales Invoice</a> </li>
+                    <li><a href="Report_Brand_Wise_Sales_Valuation.aspx">Product Wise Sale Value</a>
+                    </li>
+                    <li><a href="Report_Brand_Wise_Sale.aspx">Brand Wise Sale</a> </li>
+                    <li><a href="Report_Brand_Wise_Sale_Valuation.aspx">Brand Wise Sale Valuation</a>
+                    </li>
+                    <li><a href="Report_Category_Wise_Quantity_Sale.aspx">Category Wise Sale</a> </li>
+                    <li><a href="Report_Category_Wise_Sale_Valuation.aspx">Category Wise Sale Valuation</a>
+                    </li>
+                    <li><a href="Report_Product_Wise_Quantity_Sale.aspx">Product Wise Sale</a> </li>
+                    <li><a href="Report_Product_Wise_Sale_Valuation.aspx">Product Wise Sale Valuation</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Purchase Report</a>
+                <ul style="width: 200px">
+                    <li><a href="Report_Brand_Wise_Purchase.aspx">Brand Wise Purchase</a> </li>
+                    <li><a href="Report_Category_Wise_Purchase.aspx">Categorory Wise Purchase</a> </li>
+                    <li><a href="Report_Product_Wise_Purchase.aspx">Product Wise Purchase</a> </li>
+                    <li><a href="Report_Supplier_Wise_Purchase.aspx">Supplier Wise Purchase</a> </li>
+                </ul>
+            </li>
+            </ul> </li>
+            <li><a href="ChangedPassword.aspx">Change Password</a></li>
+            <li>
+                <asp:LinkButton ID="cmdLogOut" runat="server" OnClick="cmdLogOut_Click">Log Out</asp:LinkButton></li>
+        </ul>
+        <br style="clear: left" />
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
